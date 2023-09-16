@@ -19,56 +19,64 @@ return (write(1, &c, 1));
 
 int _printf(const char *format, ...)
 {
+va_list ss;
+char charr;
+char* strr;
+int counter = 0;
+size_t i;
 
-int count = 0;
-int i = 0;
-va_list sham;
-int num, num1;
+va_start(ss,format);
 
-va_start(sham, format);
+while (*format != '\0')
+{
+if (*format == '%')
+{
+format++;
 
-if (format && format[i])
+switch (*format)
 {
-for (; format[i] != '\0'; i++)
+case 's':
+strr = va_arg(ss, char*);
+for (i = 0; i < strlen(strr); i++)
 {
-if (format[i] == '%')
-{
-i++;
-switch(format[i])
-{
-case 'i':
-{
-num = va_arg(sham, int);
-putchar(num);
-count += 1;
+_putchar(strr[i]);
+counter++;
 }
 break;
 
-case 'd':
-{
-num1 = va_arg(sham, int);
-putchar(num1);
-count += 1;
-}
+case 'c':
+charr = va_arg(ss, int);
+_putchar(charr);
+counter++;
 break;
+
+case '%':
+_putchar('%');
+counter++;
+break;
+
 default:
-{
-putchar(format[i]);
-count += 1;
-}
+_putchar('%');
+_putchar(*format);
+counter += 2;
 break;
+
+
 }
+format++;
 }
+
 else
 {
-putchar(format[i]);
-count += 1;
+_putchar(*format);
+counter++;
+format++;
 }
 }
-}
-va_end(sham);
 
-return (count);
+va_end(ss);
 
+return(counter);
 
 }
+
