@@ -55,5 +55,5 @@ sum += 1;
 format++;
 }
 va_end(ss);
-return sum;
+return (sum);
 }
