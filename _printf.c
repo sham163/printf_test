@@ -23,6 +23,7 @@ int _printf(const char *format, ...)
 va_list ss;
 char *ptr;
 int sum = 0;
+int (*func)(va_list);
 
 va_start(ss, format);
 
@@ -33,7 +34,7 @@ if (*format == '%')
 format++;
 ptr = (char *)format;
 
-int (*func)(va_list) = get_sp(ptr);
+func = get_sp(ptr);
 if (func)
 {
 sum += func(ss);
