@@ -3,7 +3,9 @@
 
 
 #include <stdio.h>
-
+#include <stdarg.h>
+#include <unistd.h>
+#include <string.h>
 
 /**
  * struct sp - Struct sp
