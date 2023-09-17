@@ -2,7 +2,7 @@
 
 /**
 * Description: get_sp - get the specifire
-* @ss: string
+* @s: string
 * Return: function
 */
 

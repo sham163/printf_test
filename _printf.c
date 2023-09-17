@@ -12,7 +12,7 @@ va_list ss;
 char *ptr;
 int sum = 0;
 
-va_start(ss,format);
+va_start(ss, format);
 
 while (*format != '\0')
 {

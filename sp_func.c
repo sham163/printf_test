@@ -41,5 +41,5 @@ write(1, &str[i], 1);
 counter++;
 }
 
-return(counter);
+return (counter);
 }
