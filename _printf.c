@@ -37,12 +37,12 @@ int (*func)(va_list) = get_sp(ptr);
 if (func)
 {
 sum += func(ss);
-format += 1; 
+format += 1;
 }
 else
 {
 
-write(1, "%%", 2); 
+write(1, "%%", 2);
 sum += 2;
 }
 }
@@ -55,5 +55,5 @@ format++;
 }
 
 va_end(ss);
-return sum;
+return (sum);
 }
