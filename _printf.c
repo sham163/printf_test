@@ -18,9 +18,9 @@ while (*format != '\0')
 {
 if (*format == '%')
 {
-format++;
 
-ptr = (char *)format;
+
+ptr = (char *)format++;
 
 get_sp(ptr);
 sum += 1;

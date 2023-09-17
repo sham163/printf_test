@@ -46,7 +46,7 @@ return (counter);
 
 
 /**
-* Description: print_s - print string
+* Description: print_c - print string
 * @ss: argument
 * Return: int
 */
