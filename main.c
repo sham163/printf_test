@@ -11,7 +11,9 @@
 */
 int main(void)
 {
+char n = 'b';
 _printf("%s", "This sentence is retrieved from va_args!\n");
+_printf("%c hi", n);
 return (0);
 
 }

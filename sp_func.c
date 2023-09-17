@@ -1,5 +1,7 @@
 #include "main.h"
 
+
+
 /**
  * Description: _strlen - a function that returns the length of a string.
  *
@@ -61,4 +63,18 @@ int print_c(va_list ss)
 	counter++;
 
 	return (counter);
+}
+
+
+/**
+* Description: print_mod - print string
+* @ss: argument
+* Return: int
+*/
+
+int print_mod(va_list ss)
+{
+(void)ss;
+
+return (_putchar('%'));
 }

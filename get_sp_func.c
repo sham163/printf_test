@@ -41,7 +41,8 @@ int (*get_sp(char *s))(va_list ss)
 {
 spt sps[] = {
 {"s", print_s},
-{"c", print_c}
+{"c", print_c},
+{"%", print_mod}
 };
 
 int i = 0;
