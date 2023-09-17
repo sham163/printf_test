@@ -18,11 +18,11 @@ int i = 0;
 
 while (sps[i].sp[0])
 {
-if (*s == sps[i].sp[0])
+(strcmp(s, sps[i].sp) == 0)
 return (sps[i].f);
 i++;
 }
-return (0);
+return (NULL);
 }
 
 
