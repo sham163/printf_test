@@ -43,3 +43,22 @@ counter++;
 
 return (counter);
 }
+
+
+/**
+* Description: print_s - print string
+* @ss: argument
+* Return: int
+*/
+
+int print_c(va_list ss)
+{
+	char ch;
+	int counter = 0;
+
+	ch = va_arg(ss, int);
+	write(1, &ch, 1);
+	counter++;
+
+	return (counter);
+}

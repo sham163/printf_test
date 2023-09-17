@@ -10,7 +10,8 @@
 int (*get_sp(char *s))(va_list ss)
 {
 spt sps[] = {
-{"s", print_s}
+{"s", print_s},
+{"c", print_c}
 };
 
 int i = 0;
