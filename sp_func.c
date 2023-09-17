@@ -33,17 +33,12 @@ return (length);
 
 int print_s(va_list ss)
 {
-char *str = va_arg(ss, char*);
-int i, counter = 0;
+char *str = va_arg(args, char *);
+int len = 0;
 
-
-for (i = 0; i < _strlen(str); i++)
-{
-write(1, &str[i], 1);
-counter++;
-}
-
-return (counter);
+while (str[len] != '\0')
+len++;
+return (write(1, str, len));
 }
 
 
@@ -55,14 +50,10 @@ return (counter);
 
 int print_c(va_list ss)
 {
-	char ch;
-	int counter = 0;
+char ch;
 
-	ch = va_arg(ss, int);
-	write(1, &ch, 1);
-	counter++;
-
-	return (counter);
+ch = va_arg(ss, int);
+return(write(1, &ch, 1));
 }
 
 
