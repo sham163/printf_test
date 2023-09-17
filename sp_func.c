@@ -33,7 +33,7 @@ return (length);
 
 int print_s(va_list ss)
 {
-char *str = va_arg(args, char *);
+char *str = va_arg(ss, char *);
 int len = 0;
 
 while (str[len] != '\0')
