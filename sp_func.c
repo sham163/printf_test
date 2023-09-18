@@ -80,33 +80,36 @@ return (_putchar('%'));
 int print_id(va_list ss)
 {
 int i, j;
-int num = va_arg(ss, int);
+int num = va_arg(args, int);
 char buffer[12];
 int len = 0;
+int is_negative = 0;
 
 if (num < 0)
 {
-buffer[len++] = '-';
+is_negative = 1;
 num = -num;
 }
-if (num == 0)
-{
-buffer[len++] = '0';
-}
-else
-{
-while (num > 0)
+
+do
 {
 buffer[len++] = (num % 10) + '0';
 num /= 10;
+} while (num != 0);
+
+if (is_negative)
+{
+buffer[len++] = '-';
 }
-}
+
 for (i = 0, j = len - 1; i < j; i++, j--)
 {
 char temp = buffer[i];
 buffer[i] = buffer[j];
 buffer[j] = temp;
 }
+
 buffer[len] = '\0';
-return (write(1, buffer, len));
+
+return write(1, buffer, len);
 }
