@@ -24,7 +24,7 @@ if (*format == '%')
 format++;
 
 func = get_sp((char *)format);
-if (func != NULL)
+if (func)
 {
 printed += func(args);
 format++;
