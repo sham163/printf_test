@@ -53,7 +53,7 @@ int print_c(va_list ss)
 char ch;
 
 ch = va_arg(ss, int);
-return(write(1, &ch, 1));
+return (write(1, &ch, 1));
 }
 
 
