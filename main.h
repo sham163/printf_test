@@ -6,6 +6,7 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include <string.h>
+#define BUFFER_SIZE 1024 
 
 /**
  * struct sp - Struct sp

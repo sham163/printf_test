@@ -60,6 +60,7 @@ i++;
 count++;
 }
 }
+return (count);
 }
 
 
