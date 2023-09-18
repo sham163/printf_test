@@ -91,8 +91,7 @@ is_negative = 1;
 num = -num;
 }
 
-do
-{
+do {
 buffer[len++] = (num % 10) + '0';
 num /= 10;
 } while (num != 0);
@@ -111,5 +110,5 @@ buffer[j] = temp;
 
 buffer[len] = '\0';
 
-return write(1, buffer, len);
+return (write(1, buffer, len));
 }
