@@ -80,7 +80,7 @@ return (_putchar('%'));
 int print_id(va_list ss)
 {
 int i, j;
-int num = va_arg(args, int);
+int num = va_arg(ss, int);
 char buffer[12];
 int len = 0;
 int is_negative = 0;
