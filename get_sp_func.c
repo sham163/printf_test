@@ -45,6 +45,7 @@ spt sps[] = {
 {"%", print_mod},
 {"d", print_id},
 {"i", print_id},
+{"b", print_b},
 {NULL, NULL}
 };
 
