@@ -8,41 +8,42 @@
 
 int _printf(const char *format, ...)
 {
-va_list ss;
-char *ptr;
-int sum = 0;
 int (*func)(va_list);
+int printed_chars = 0;
+va_list args;
 
-va_start(ss, format);
+va_start(args, format);
 
-while (*format != '\0')
+if (format == NULL)
+return (-1);
+
+while (*format)
 {
 if (*format == '%')
 {
 format++;
-ptr = (char *)format;
 
-func = get_sp(ptr);
+func = get_sp((char *)format);
 if (func)
 {
-sum += func(ss);
-format += 1;
+printed_chars += func(args);
+format++;
 }
 else
 {
-
-write(1, "%%", 2);
-sum += 2;
-}
-}
-else
-{
-write(1, format, 1);
-sum++;
-}
+printed_chars += write(1, "%", 1);
+printed_chars += write(1, format, 1);
 format++;
 }
 
-va_end(ss);
-return (sum);
+}
+else
+{
+printed_chars += write(1, format, 1);
+format++;
+}
+}
+
+va_end(args);
+return printed_chars;
 }
