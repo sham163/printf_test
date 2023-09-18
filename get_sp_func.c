@@ -43,6 +43,8 @@ spt sps[] = {
 {"s", print_s},
 {"c", print_c},
 {"%", print_mod},
+{"d", print_id},
+{"i", print_id},
 {NULL, NULL}
 };
 
