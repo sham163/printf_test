@@ -48,7 +48,7 @@ spt sps[] = {
 
 int i = 0;
 
-while (sps[i].sp[0])
+while (sps[i].sp != NULL)
 {
 if (*s == sps[i].sp[0])
 return (sps[i].f);
