@@ -9,34 +9,94 @@
 *
 * Return: Always 0
 */
+
 int main(void)
 {
-int len;
-int len2;
+int len = 0;
+int len2 = 0;
 
-len = _printf("Let's try to printf a simple sentence.\n");
-len2 = printf("Let's try to printf a simple sentence.\n");
-_printf("Length:[%d, %i]\n", len, len);
-printf("Length:[%d, %i]\n", len2, len2);
-_printf("Negative:[%d]\n", -762534);
-printf("Negative:[%d]\n", -762534);
-_printf("Character:[%c]\n", 'H');
-printf("Character:[%c]\n", 'H');
-_printf("String:[%s]\n", "I am a string !");
-printf("String:[%s]\n", "I am a string !");
-_printf("Len:[%d]\n", len);
-printf("Len:[%d]\n", len2);
-_printf("Unknown:[%r]\n");
-_printf("A char inside a sentence: %c. Did it work?\n", 'F');
-_printf("Let'see if the cast is corretly done: %c. Did it work?\n", 48);
-printf("Let'see if the cast is corretly done: %c. Did it work?\n", 48);
-_printf("%!\n");
+len = printf("String:[%s%s]\n", "I am a string !", "second string !");
+len2 = _printf("String:[%s%s]\n", "I am a string !", "second string !");
+printf("Length:[%d, %i]\n", len, len2);
 
-_printf("%");
+len = _printf("Number: %d, %i\n", 4034, 4034);
+len2 = printf("Number: %d, %i\n", 4034, 4034);
+printf("Len:[%d]\n", len);
+printf("Lelen:[%d]\n\n", len2);
+
+len = _printf("Negative: %i, %d\n", -4034, -4034);
+len2 = printf("Negative: %i, %d\n", -4034, -4034);
+printf("Len:[%d]\n", len);
+printf("Lelen:[%d]\n\n", len2);
+
+len = _printf("NULL: %i\n", NULL);
+len2 = printf("NULL: %i\nlenlen", NULL);
+printf("Len:[%d]\n", len);
+printf("Lelen:[%d]\n\n", len2);
+
+len = _printf("%d\n", INT_MAX);
+len2 = printf("%d\n", INT_MAX);
+printf("Len:[%d]\n", len);
+printf("Lelen:[%d]\n\n", len2);
+
+len = _printf("%d\n", INT_MIN);
+len2 = printf("%d\n", INT_MIN);
+printf("Len:[%d]\n", len);
+printf("Lelen:[%d]\n\n", len2);
+
+len = _printf("\nNumber: [%d], [%i]\n", 4034, 4034);
+len2 = printf("Number: [%d], [%i]\n", 4034, 4034);
+printf("Len:[%d]\n", len);
+printf("Lelen:[%d]\n\n", len2);
+
+len = _printf("Negative: [%i], [%d]\n", -4034, -4034);
+len2 = printf("Negative: [%i], [%d]\n", -4034, -4034);
+printf("Len:[%d]\n", len);
+printf("Lelen:[%d]\n\n", len2);
+
+len = _printf("long: [%i], [%d]\n", 4545439394949595, 4545439394949595);
+len2 = printf("long: [%i], [%d]\n", 4545439394949595, 4545439394949595);
+printf("Len:[%d]\n", len);
+printf("Lelen:[%d]\n\n", len2);
+
+len = _printf("Greater than int: [%i], [%d]\n", 454543939494, 454543939494);
+len2 = printf("Greater than int: [%i], [%d]\n", 454543939494, 454543939494);
+printf("Len:[%d]\n", len);
+printf("Lelen:[%d]\n\n", len2);
+
+len = _printf("N-Greater than int: [%i], [%d]\n", -454543939494, -454543939494);
+len2 = printf("N-Greater than int: [%i], [%d]\n", -454543939494, -454543939494);
+printf("Len:[%d]\n", len);
+printf("Lelen:[%d]\n\n", len2);
+
+len = _printf("long: [%i], [%d]\n", -4545439394949595, -4545439394949595);
+len2 = printf("long: [%i], [%d]\n", -4545439394949595, -4545439394949595);
+printf("Len:[%d]\n", len);
+
+printf("Lelen:[%d]\n\n", len2);
+
+len = _printf("NULL: [%i]\n", NULL);
+len2 = printf("NULL: [%i]\n", NULL);
+printf("Len:[%d]\n", len);
+printf("Lelen:[%d]\n\n", len2);
+
+len = _printf("Zero: [%i]\n", ZERO);
+len2 = printf("Zero: [%i]\n", ZERO);
+printf("Len:[%d]\n", len);
+printf("Lelen:[%d]\n\n", len2);
+
+len = _printf("[%d]\n", INT_MAX);
+len2 = printf("[%d]\n", INT_MAX);
+printf("Len:[%d]\n", len);
+printf("Lelen:[%d]\n\n", len2);
+
+len = _printf("[%d]\n", INT_MIN);
+len2 = printf("[%d]\n", INT_MIN);
+printf("Len:[%d]\n", len);
+printf("Lelen:[%d]\n\n", len2);
+
 _printf(NULL);
-_printf("%c", '\0');
-
-
+printf(NULL);
 
 return (0);
 }

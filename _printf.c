@@ -9,7 +9,7 @@
 int _printf(const char *format, ...)
 {
 int (*func)(va_list);
-int printed_chars = 0;
+int printed = 0;
 va_list args;
 
 va_start(args, format);
@@ -17,33 +17,31 @@ va_start(args, format);
 if (format == NULL)
 return (-1);
 
-while (*format)
+while (format != NULL)
 {
 if (*format == '%')
 {
 format++;
 
 func = get_sp((char *)format);
-if (func)
+if (func != NULL)
 {
-printed_chars += func(args);
+printed += func(args);
 format++;
 }
 else
 {
-printed_chars += write(1, "%", 1);
-printed_chars += write(1, format, 1);
+printed += write(1, "%", 1);
+printed += write(1, format, 1);
 format++;
 }
-
 }
 else
 {
-printed_chars += write(1, format, 1);
+printed += write(1, format, 1);
 format++;
 }
 }
-
 va_end(args);
-return (printed_chars);
+return (printed);
 }
