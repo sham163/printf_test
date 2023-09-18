@@ -34,7 +34,7 @@ _printf("%!\n");
 
 _printf("%");
 _printf(NULL);
-_printf("%c",'\0');
+_printf("%c", '\0');
 
 
 
