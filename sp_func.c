@@ -84,27 +84,29 @@ int num = va_arg(ss, int);
 char buffer[12];
 int len = 0;
 
-if (num < 0) {
+if (num < 0)
+{
 buffer[len++] = '-';
 num = -num;
 }
-
-if (num == 0) {
+if (num == 0)
+{
 buffer[len++] = '0';
-} else {
-while (num > 0) {
+}
+else
+{
+while (num > 0)
+{
 buffer[len++] = (num % 10) + '0';
 num /= 10;
 }
 }
-
-for (i = 0, j = len - 1; i < j; i++, j--) {
+for (i = 0, j = len - 1; i < j; i++, j--)
+{
 char temp = buffer[i];
 buffer[i] = buffer[j];
 buffer[j] = temp;
 }
-
 buffer[len] = '\0';
-
-return write(1, buffer, len);
+return (write(1, buffer, len));
 }

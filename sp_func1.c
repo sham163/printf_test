@@ -26,7 +26,7 @@ _putchar('1');
 else
 _putchar('0');
 
-mask >>= 1; 
+mask >>= 1;
 printed_chars++;
 }
 
