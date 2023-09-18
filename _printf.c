@@ -9,7 +9,7 @@
 int _printf(const char *format, ...)
 {
 int (*func)(va_list);
-int printed = 0;
+int printed_chars = 0;
 va_list args;
 
 va_start(args, format);
@@ -26,22 +26,24 @@ format++;
 func = get_sp((char *)format);
 if (func)
 {
-printed += func(args);
+printed_chars += func(args);
 format++;
 }
 else
 {
-printed += write(1, "%", 1);
-printed += write(1, format, 1);
+printed_chars += write(1, "%", 1);
+printed_chars += write(1, format, 1);
 format++;
 }
+
 }
 else
 {
-printed += write(1, format, 1);
+printed_chars += write(1, format, 1);
 format++;
 }
 }
+
 va_end(args);
-return (printed);
+return (printed_chars);
 }
