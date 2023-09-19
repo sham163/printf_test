@@ -34,14 +34,12 @@ return (length);
 int print_s(va_list ss)
 {
 char *str = va_arg(ss, char *);
-int i = 0, count = 0;
+int i = 0, count = 0, j = 0;
+char buffer[BUFFER_SIZE];
+
 
 while (str[i])
 {
-if (count % BUFFER_SIZE == 0)
-{
-char buffer[BUFFER_SIZE];
-int j = 0;
 
 while (str[i] && j < BUFFER_SIZE)
 {
@@ -53,16 +51,8 @@ j++;
 write(1, buffer, j);
 count += j;
 }
-else
-{
-write(1, &str[i], 1);
-i++;
-count++;
+return (write(1, buffer, j));
 }
-}
-return (count);
-}
-
 
 /**
 * Description: print_c - print string
