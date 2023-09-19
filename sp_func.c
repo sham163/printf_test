@@ -33,40 +33,40 @@ return (length);
 
 int print_s(va_list ss)
 {
-char *str = va_arg(ss, char*);
-int count = 0;
-int i = 0;
+char *st = va_arg(ss, char*);
+int cou = 0;
+int s = 0;
 char buffer[BUFFER_SIZE];
 
-if (str == NULL)
+if (st == NULL)
 {
-str = "(null)";
+st = "(null)";
 }
 else
 {
-while (str[i])
+while (st[s])
 {
-if (count % BUFFER_SIZE == 0)
+if (cou % BUFFER_SIZE == 0)
 {
-int j = 0;
-while (str[i] && j < BUFFER_SIZE)
+int t = 0;
+while (st[s] && t < BUFFER_SIZE)
 {
-buffer[j] = str[i];
-i++;
-j++;
+buffer[t] = st[s];
+s++;
+t++;
 }
-write(1, buffer, j);
-count += j;
+write(1, buffer, t);
+cou += t;
 }
 else
 {
-write(1, &str[i], 1);
-i++;
-count++;
+write(1, &st[s], 1);
+s++;
+cou++;
 }
 }
 }
-return (count);
+return (cou);
 }
 
 
