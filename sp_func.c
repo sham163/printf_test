@@ -78,10 +78,10 @@ return (cou);
 
 int print_c(va_list ss)
 {
-char ch;
+char sham;
 
-ch = va_arg(ss, int);
-return (write(1, &ch, 1));
+sham = va_arg(ss, int);
+return (write(1, &sham, 1));
 }
 
 
@@ -107,36 +107,36 @@ return (write(1, "%", 1));
 
 int print_id(va_list ss)
 {
-int i, j;
-int num = va_arg(ss, int);
+int s, t;
+int nu = va_arg(ss, int);
 char buffer[12];
-int len = 0;
-int is_negative = 0;
+int le = 0;
+int isn = 0;
 
-if (num < 0)
+if (nu < 0)
 {
-is_negative = 1;
-num = -num;
+isn = 1;
+nu = -nu;
 }
 
 do {
-buffer[len++] = (num % 10) + '0';
-num /= 10;
-} while (num != 0);
+buffer[le++] = (nu % 10) + '0';
+nu /= 10;
+} while (nu != 0);
 
-if (is_negative)
+if (isn)
 {
-buffer[len++] = '-';
+buffer[le++] = '-';
 }
 
-for (i = 0, j = len - 1; i < j; i++, j--)
+for (s = 0, t = le - 1; s < t; s++, t--)
 {
-char temp = buffer[i];
-buffer[i] = buffer[j];
-buffer[j] = temp;
+char te = buffer[s];
+buffer[s] = buffer[t];
+buffer[t] = te;
 }
 
-buffer[len] = '\0';
+buffer[le] = '\0';
 
-return (write(1, buffer, len));
+return (write(1, buffer, le));
 }
