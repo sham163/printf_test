@@ -39,7 +39,7 @@ char buffer[BUFFER_SIZE];
 
 while (str[i] && j < BUFFER_SIZE)
 {
-for (i = 0 ; str[i] != '\0';i++)
+for (i = 0; str[i] != '\0'; i++)
 {
 buffer[j] = str[i];
 
