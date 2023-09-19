@@ -50,7 +50,7 @@ j++;
 
 
 count += j;
-}
+
 return (write(1, buffer, j));
 }
 
