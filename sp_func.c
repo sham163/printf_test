@@ -96,14 +96,26 @@ isn = 1;
 nu = -nu;
 }
 
-do {
-buffer[le++] = (nu % 10) + '0';
-nu /= 10;
-} while (nu != 0);
-
-if (isn)
+if (nu == 0)
 {
-buffer[le++] = '-';
+  buffer[le] = (nu % 10) + '0';
+  le++;
+nu /= 10;
+
+}
+
+while (nu != 0)
+{
+buffer[le] = (nu % 10) + '0';
+le++;
+nu /= 10;
+
+}
+
+if (isn > 0)
+{
+buffer[le] = '-';
+le++;
 }
 
 for (s = 0, t = le - 1; s < t; s++, t--)
