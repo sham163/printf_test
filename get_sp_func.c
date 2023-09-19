@@ -46,16 +46,17 @@ spt sps[] = {
 {"d", print_id},
 {"i", print_id},
 {"b", print_b},
+{"x", print_hex},
 {NULL, NULL}
 };
 
-int i = 0;
+int sh = 0;
 
-while (sps[i].sp != NULL)
+while (sps[sh].sp != NULL)
 {
-if (*s == sps[i].sp[0])
-return (sps[i].f);
-i++;
+if (*s == sps[sh].sp[0])
+return (sps[sh].f);
+sh++;
 }
 return (NULL);
 }
