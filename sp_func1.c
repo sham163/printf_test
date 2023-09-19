@@ -31,7 +31,7 @@ bi[t] = te;
 }
 
 
-
+bi[le] = '\0';
 
 
 return (write(1, bi, le));
