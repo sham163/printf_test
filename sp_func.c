@@ -42,7 +42,8 @@ if (str == NULL)
 {
 str = "(nil)";
 }
-
+else
+{
 while (str[i])
 {
 if (count % BUFFER_SIZE == 0)
@@ -64,7 +65,7 @@ i++;
 count++;
 }
 }
-
+}
 return (count);
 }
 
