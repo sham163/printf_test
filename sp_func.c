@@ -66,7 +66,7 @@ count++;
 }
 }
 }
-return (count);
+return (write(1, &str[i], 1));
 }
 
 
@@ -95,7 +95,7 @@ int print_mod(va_list ss)
 {
 (void)ss;
 
-return (_putchar('%'));
+return (write(1, "%", 1));
 }
 
 

@@ -12,45 +12,41 @@
 
 int main(void)
 {
-int len;
-int len2;
-unsigned int ui;
+int ls = _printf("%s"," gggggggggggggggggggggggg");
+int l2 = printf("%s"," gggggggggggggggggggggggg");
 
-ui = (unsigned int)INT_MAX + 1024;
+printf("%d", ls);
+_putchar('\n');
+printf("%d", l2);
+_putchar('\n');
 
+_printf("Let's try to printf a simple sentence.\n");
+printf("Let's try to printf a simple sentence.\n");
 
-len = _printf("Let's try to printf a simple sentence.bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\n");
-len2 = printf("Let's try to printf a simple sentence.\n");
-_printf("Length:[%d, %i]\n", len, len);
-printf("Length:[%d, %i]\n", len2, len2);
-_printf("Negative:[%d]\n", -762534);
-printf("Negative:[%d]\n", -762534);
-
-_printf("Unsigned:[%u]\n", ui);
-printf("Unsigned:[%u]\n", ui);
-_printf("Unsigned octal:[%o]\n", ui);
-printf("Unsigned octal:[%o]\n", ui);
-
+_printf("empty Character:[%c]\n", ' ');
+printf("empty Character:[%c]\n", ' ');
 _printf("Character:[%c]\n", 'H');
 printf("Character:[%c]\n", 'H');
+_printf("Character:[%c%c]\n", 'H', 'I');
+printf("Character:[%c%c]\n", 'H', 'I');
+_printf("Character:[%c%c%c]\n", 'H', 'I', '!');
+printf("Character:[%c%c%c]\n", 'H', 'I', '!');
+
+_printf("Character:[%c %c %c]\n", 'H', 'I', '!');
+printf("Character:[%c %c %c]\n", 'H', 'I', '!');
+_printf("Two c with Space:[%c %c]\n", 'H', 'I');
+printf("Two c with Space:[%c %c]\n", 'H', 'I');
+_printf("empty String:[%s]\n", "");
+printf("empty String:[%s]\n", "");
+_printf("Space String:[%s]\n", " ");
+printf("Space String:[%s]\n", " ");
 _printf("String:[%s]\n", "I am a string !");
 printf("String:[%s]\n", "I am a string !");
-_printf("Len:[%d]\n", len);
-printf("Len:[%d]\n", len2);
-_printf("Unknown:[%r]\n");
-_printf("A char inside a sentence: %c. Did it work?\n", 'F');
-_printf("abcd%");
-_printf("Let'see if the cast is corretly done: %c. Did it work?\n", 48);
-printf("Let'see if the cast is corretly done: %c. Did it work?\n", 48);
-_printf("%!\n");
+_printf("String:[%s%s]\n", "I am a string !", "second string !");
 
-
-_putchar('\n');
-_printf("abcd%");
-_printf(NULL);
-_printf("%c",'\0');
-
-
+_printf("String:[%s%s]\n", "I am a string !", "second string !");
+printf("String:[%s%s]\n", "I am a string !", "second string !");
+_printf("%%");
 
 return (0);
 }
