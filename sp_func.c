@@ -37,9 +37,9 @@ char *str = va_arg(ss, char *);
 int i = 0, count = 0, j = 0;
 char buffer[BUFFER_SIZE];
 
-
 while (str[i])
 {
+
 
 while (str[i] && j < BUFFER_SIZE)
 {
@@ -48,7 +48,7 @@ i++;
 j++;
 }
 
-write(1, buffer, j);
+
 count += j;
 }
 return (write(1, buffer, j));
