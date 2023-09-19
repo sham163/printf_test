@@ -48,6 +48,7 @@ spt sps[] = {
 {"b", print_b},
 {"x", print_hex},
 {"X", print_hex},
+{"p", print_poin},
 {NULL, NULL}
 };
 

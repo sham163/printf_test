@@ -40,7 +40,8 @@ return (printed_chars);
 * Return: int
 */
 
-int print_hex(va_list ss) {
+int print_hex(va_list ss)
+{
 unsigned int nu = va_arg(ss, unsigned int);
 char buffer[9];
 int s = 0, t;
@@ -56,4 +57,41 @@ write(1, &buffer[t], 1);
 }
 
 return (s);
+}
+
+
+
+/**
+* Description: print_poin - print pointer
+* @ss: argument
+* Return: int
+*/
+
+int print_poin(va_list ss)
+{
+void *ptr = va_arg(ss, void *);
+unsigned long int nu = (unsigned long int)ptr;
+char buffer[18];
+int s = 16;
+
+buffer[0] = '0';
+buffer[1] = 'x';
+
+
+
+while (s >= 2) {
+int hex_dig = nu & 0xF;
+if (hex_dig < 10)
+{
+buffer[s] = '0' + hex_dig;
+}
+else
+{
+buffer[s] = 'a' + hex_dig - 10;
+}
+nu >>= 4;
+s--;
+}
+
+return write(1, buffer, 18);
 }
