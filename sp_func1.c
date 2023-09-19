@@ -9,28 +9,32 @@
 
 int print_b(va_list ss)
 {
-unsigned int num = va_arg(ss, unsigned int);
-int printed_chars = 0;
-unsigned int mask = 1 << (sizeof(unsigned int) * 8 - 1);
+int s, t;
+unsigned int nu = va_arg(ss, unsigned int);
+char bi[32];
+int le = 0;
+char te;
 
-if (num == 0)
+
+while (nu > 0)
 {
-_putchar('0');
-return (1);
+bi[le++] = (nu % 2) + '0';
+nu = nu / 2;
 }
 
-while (mask > 0)
-{
-if (num & mask)
-_putchar('1');
-else
-_putchar('0');
 
-mask >>= 1;
-printed_chars++;
+for (s = 0, t = le - 1; s < t; s++, t--)
+{
+te = bi[s];
+bi[s] = bi[t];
+bi[t] = te;
 }
 
-return (printed_chars);
+
+
+
+
+return (write(1, bi, le));
 }
 
 
