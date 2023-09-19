@@ -37,15 +37,15 @@ char *str = va_arg(ss, char *);
 int i = 0, count = 0, j = 0;
 char buffer[BUFFER_SIZE];
 
-for (i = 0 ; str[i] != '\0' ;)
-{
-
-
 while (str[i] && j < BUFFER_SIZE)
 {
+for (i = 0 ; str[i] != '\0';i++)
+{
 buffer[j] = str[i];
-i++;
+
 j++;
+}
+
 }
 
 
