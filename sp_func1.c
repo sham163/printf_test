@@ -79,7 +79,8 @@ buffer[1] = 'x';
 
 
 
-while (s >= 2) {
+while (s >= 2)
+{
 int hex_dig = nu & 0xF;
 if (hex_dig < 10)
 {
@@ -94,4 +95,25 @@ s--;
 }
 
 return write(1, buffer, 18);
+}
+
+
+/**
+* Description: print_re - reverse string
+* @ss: argument
+* Return :int
+*/
+
+int print_re(va_list ss)
+{
+char *st = va_arg(ss, char *);
+int s;
+int le = _strlen(st);
+
+for (s = le - 1; s >= 0; s--)
+{
+_putchar(st[s]);
+}
+
+return (le);
 }

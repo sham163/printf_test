@@ -27,7 +27,9 @@ int print_id(va_list ss);
 int print_b(va_list ss);
 int print_hex(va_list ss);
 int print_poin(va_list ss);
+int print_re(va_list ss);
 int _putchar(char c);
+int _strlen(char *s);
 
 int _printf(const char *format, ...);
 int (*get_sp(char *s))(va_list ss);
