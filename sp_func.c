@@ -66,7 +66,7 @@ count++;
 }
 }
 }
-return (write(1, &str[i], 1));
+return (count);
 }
 
 
