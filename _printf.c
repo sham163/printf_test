@@ -9,10 +9,10 @@
 int _printf(const char *format, ...)
 {
 int (*func)(va_list);
-int printed_chars = 0;
-va_list args;
+int prin = 0;
+va_list ss;
 
-va_start(args, format);
+va_start(ss, format);
 
 if (format == NULL)
 return (-1);
@@ -28,24 +28,24 @@ return (-1);
 func = get_sp((char *)format);
 if (func)
 {
-printed_chars += func(args);
+prin += func(ss);
 format++;
 }
 else
 {
-printed_chars += write(1, "%", 1);
-printed_chars += write(1, format, 1);
+prin += write(1, "%", 1);
+prin += write(1, format, 1);
 format++;
 }
 
 }
 else
 {
-printed_chars += write(1, format, 1);
+prin += write(1, format, 1);
 format++;
 }
 }
 
-va_end(args);
-return (printed_chars);
+va_end(ss);
+return (prin);
 }
