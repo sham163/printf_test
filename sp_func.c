@@ -38,6 +38,11 @@ int count = 0;
 int i = 0;
 char buffer[BUFFER_SIZE];
 
+if (str == NULL)
+{
+str = "(nil)";
+}
+
 while (str[i])
 {
 if (count % BUFFER_SIZE == 0)
