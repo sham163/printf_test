@@ -50,6 +50,7 @@ spt sps[] = {
 {"X", print_hex},
 {"p", print_poin},
 {"r", print_re},
+{"R", print_ro13},
 {NULL, NULL}
 };
 
