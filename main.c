@@ -39,7 +39,7 @@ _printf("Len:[%d]\n", len);
 printf("Len:[%d]\n", len2);
 _printf("Unknown:[%r]\n");
 _printf("A char inside a sentence: %c. Did it work?\n", 'F');
-_printf("abcd%\n");
+_printf("abcd%");
 _printf("Let'see if the cast is corretly done: %c. Did it work?\n", 48);
 printf("Let'see if the cast is corretly done: %c. Did it work?\n", 48);
 _printf("%!\n");
@@ -47,7 +47,6 @@ _printf("%!\n");
 
 _putchar('\n');
 _printf("abcd%");
-_putchar('\n');
 _printf(NULL);
 _printf("%c",'\0');
 

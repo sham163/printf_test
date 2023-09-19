@@ -40,7 +40,7 @@ char buffer[BUFFER_SIZE];
 
 if (str == NULL)
 {
-str = "(nil)";
+str = "(null)";
 }
 else
 {
