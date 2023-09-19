@@ -47,6 +47,7 @@ spt sps[] = {
 {"i", print_id},
 {"b", print_b},
 {"x", print_hex},
+{"X", print_hex},
 {NULL, NULL}
 };
 
