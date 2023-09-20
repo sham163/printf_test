@@ -40,7 +40,8 @@ char *st = va_arg(ss, char *);
 int s;
 int le = _strlen(st);
 
-for (s = 0; s < le; s++) {
+for (s = 0; s < le; s++)
+{
 _putchar(ro13_char(st[s]));
 }
 

@@ -95,23 +95,18 @@ if (nu < 0)
 isn = 1;
 nu = -nu;
 }
-
 if (nu == 0)
 {
-  buffer[le] = (nu % 10) + '0';
-  le++;
+buffer[le] = (nu % 10) + '0';
+le++;
 nu /= 10;
-
 }
-
 while (nu != 0)
 {
 buffer[le] = (nu % 10) + '0';
 le++;
 nu /= 10;
-
 }
-
 if (isn > 0)
 {
 buffer[le] = '-';
@@ -128,4 +123,41 @@ buffer[t] = te;
 buffer[le] = '\0';
 
 return (write(1, buffer, le));
+}
+
+
+/**
+* Description: print_u - deal whith %s format specifier
+* @ss: the arguments in va_list
+* Return: count of characters printed
+*/
+int print_u(va_list ss)
+{
+int i;
+unsigned int num = va_arg(ss, unsigned int);
+char buffer[32];
+
+int len = 0;
+
+if (num == 0)
+{
+buffer[len] = (num % 10) + '0';
+len++;
+num /= 10;
+
+}
+
+while (num > 0)
+{
+buffer[len] = (num % 10) + '0';
+len++;
+num /= 10;
+}
+for (i = len - 1; i >= 0; i--)
+{
+write(1, &buffer[i], 1);
+}
+
+return (len);
+
 }

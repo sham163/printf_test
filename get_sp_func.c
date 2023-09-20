@@ -51,6 +51,8 @@ spt sps[] = {
 {"p", print_poin},
 {"r", print_re},
 {"R", print_ro13},
+{"o", print_o},
+{"u", print_u},
 {NULL, NULL}
 };
 

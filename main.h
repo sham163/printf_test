@@ -29,7 +29,10 @@ int print_hex(va_list ss);
 int print_poin(va_list ss);
 int print_re(va_list ss);
 int print_ro13(va_list ss);
+int print_u(va_list ss);
+int print_o(va_list ss);
 char ro13_char(char c);
+
 int _putchar(char c);
 int _strlen(char *s);
 

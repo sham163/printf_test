@@ -97,7 +97,7 @@ nu >>= 4;
 s--;
 }
 
-return write(1, buffer, 18);
+return (write(1, buffer, 18));
 }
 
 
@@ -119,4 +119,40 @@ _putchar(st[s]);
 }
 
 return (le);
+}
+
+
+/**
+* Description: print_o - deal whith %b format specifier
+* @ss: the arguments in va_list
+* Return: count of characters printed
+*/
+int print_o(va_list ss)
+{
+int i;
+unsigned int digit = va_arg(ss, unsigned int);
+char buffer[12];
+
+int lenght = 0;
+if (digit == 0)
+{
+buffer[lenght] = (digit % 8) + '0';
+lenght++;
+digit /= 8;
+
+}
+
+while (digit > 0)
+{
+buffer[lenght] = (digit % 8) + '0';
+lenght++;
+digit /= 8;
+}
+
+for (i = lenght - 1; i >= 0; i--)
+{
+write(1, &buffer[i], 1);
+}
+
+return (lenght);
 }
